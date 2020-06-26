@@ -13,7 +13,11 @@ class OverviewPageVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let model = Overview(average: 74.5, achieved: 2.345, complete: 4.564, target: 75.3)
+        let year1 = Year(numtest: 1)
+        let year2 = Year(numtest: 2)
+        let year3 = Year(numtest: 3)
+        let years = [year1, year2, year3]
+        let model = Overview(average: 75, achieved: 66, complete: 56, target: 65, Years: years)
         
         overviewView.updateViews(overview: model)
         overviewView.layer.cornerRadius = 10.0

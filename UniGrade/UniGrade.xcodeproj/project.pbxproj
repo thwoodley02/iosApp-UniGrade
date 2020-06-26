@@ -18,6 +18,8 @@
 		8A2E1E8224A6512600AE76E6 /* UniGradeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8124A6512600AE76E6 /* UniGradeTests.swift */; };
 		8A2E1E8924A6521000AE76E6 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E7224A64C2400AE76E6 /* OverviewView.swift */; };
 		8A2E1E8A24A6526A00AE76E6 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E7524A64D6F00AE76E6 /* OverviewModel.swift */; };
+		8A2E1E8C24A664FE00AE76E6 /* YearsOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */; };
+		8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8D24A665D600AE76E6 /* YearModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		8A2E1E7F24A6512600AE76E6 /* UniGradeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniGradeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A2E1E8124A6512600AE76E6 /* UniGradeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniGradeTests.swift; sourceTree = "<group>"; };
 		8A2E1E8324A6512600AE76E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsOverviewCell.swift; sourceTree = "<group>"; };
+		8A2E1E8D24A665D600AE76E6 /* YearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E7224A64C2400AE76E6 /* OverviewView.swift */,
+				8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E7524A64D6F00AE76E6 /* OverviewModel.swift */,
+				8A2E1E8D24A665D600AE76E6 /* YearModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,7 +240,9 @@
 			files = (
 				8A2E1E5F24A63FD600AE76E6 /* OverviewPageVC.swift in Sources */,
 				8A2E1E7624A64D6F00AE76E6 /* OverviewModel.swift in Sources */,
+				8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */,
 				8A2E1E5B24A63FD600AE76E6 /* AppDelegate.swift in Sources */,
+				8A2E1E8C24A664FE00AE76E6 /* YearsOverviewCell.swift in Sources */,
 				8A2E1E5D24A63FD600AE76E6 /* SceneDelegate.swift in Sources */,
 				8A2E1E7324A64C2400AE76E6 /* OverviewView.swift in Sources */,
 			);

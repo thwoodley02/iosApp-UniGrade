@@ -22,6 +22,9 @@ class OverviewView: UIView {
         completeLbl.text = overview.getCompleteStr()
         targetLbl.text = overview.getTargetStr()
         averageSlider.progress = Float(overview.average/100)
+        
+        
+        
     }
     
     
