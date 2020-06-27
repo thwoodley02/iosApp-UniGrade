@@ -10,31 +10,30 @@ import Foundation
 
 struct Year {
     private var title: String
-    private var average: Double
-    private var achieved: Double
-    private var complete: Double
+    private(set) public var credits: Int
+    private(set) public var weight: Double
+    private var yearoverview: Overview
     
     
-    init(title: String, average: Double, achieved: Double, complete: Double) {
+    init(title: String, credits: Int, weight: Double, yearoverview: Overview) {
         self.title = title
-        self.average = average
-        self.achieved = achieved
-        self.complete = complete
+        self.credits = credits
+        self.weight = weight
+        self.yearoverview = yearoverview
     }
     
     func getAverageStr() -> String {
-        return roundToString(percentage: average)    }
+        return yearoverview.getAverageStr()    }
     func getAchievedStr() -> String {
-        return roundToString(percentage: achieved)    }
+        return yearoverview.getAchievedStr()    }
     func getCompleteStr() -> String {
-        return roundToString(percentage: complete)    }
-    func getTitle() -> String {
-        return title    }
-    
-    
-    func roundToString(percentage: Double) -> String {
-        let per: Int = Int(round(percentage))
-        return "\(per)%"
-        }
-    
+        return yearoverview.getCompleteStr()    }
+    func getAverage() -> Double {
+        return yearoverview.average  }
+    func getTitleStr() -> String {
+        return "Year \(title)"    }
+    func getCreditsStr() -> String {
+        return "\(credits) Credits"    }
+    func getWeightStr() -> String {
+        return "\(yearoverview.roundToString(percentage: weight)) Weighting"    }
 }

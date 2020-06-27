@@ -20,6 +20,8 @@
 		8A2E1E8A24A6526A00AE76E6 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E7524A64D6F00AE76E6 /* OverviewModel.swift */; };
 		8A2E1E8C24A664FE00AE76E6 /* YearsOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */; };
 		8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8D24A665D600AE76E6 /* YearModel.swift */; };
+		8A2E1E9024A6A57C00AE76E6 /* DataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */; };
+		8A2E1E9224A7486B00AE76E6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9124A7486B00AE76E6 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		8A2E1E8324A6512600AE76E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsOverviewCell.swift; sourceTree = "<group>"; };
 		8A2E1E8D24A665D600AE76E6 /* YearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearModel.swift; sourceTree = "<group>"; };
+		8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
+		8A2E1E9124A7486B00AE76E6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		8A2E1E5924A63FD600AE76E6 /* UniGrade */ = {
 			isa = PBXGroup;
 			children = (
+				8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */,
 				8A2E1E7024A6401E00AE76E6 /* Controllers */,
 				8A2E1E6F24A6401800AE76E6 /* Models */,
 				8A2E1E6E24A6400800AE76E6 /* Views */,
@@ -114,6 +119,7 @@
 		8A2E1E6F24A6401800AE76E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8A2E1E9124A7486B00AE76E6 /* UserModel.swift */,
 				8A2E1E7524A64D6F00AE76E6 /* OverviewModel.swift */,
 				8A2E1E8D24A665D600AE76E6 /* YearModel.swift */,
 			);
@@ -241,9 +247,11 @@
 				8A2E1E5F24A63FD600AE76E6 /* OverviewPageVC.swift in Sources */,
 				8A2E1E7624A64D6F00AE76E6 /* OverviewModel.swift in Sources */,
 				8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */,
+				8A2E1E9024A6A57C00AE76E6 /* DataFile.swift in Sources */,
 				8A2E1E5B24A63FD600AE76E6 /* AppDelegate.swift in Sources */,
 				8A2E1E8C24A664FE00AE76E6 /* YearsOverviewCell.swift in Sources */,
 				8A2E1E5D24A63FD600AE76E6 /* SceneDelegate.swift in Sources */,
+				8A2E1E9224A7486B00AE76E6 /* UserModel.swift in Sources */,
 				8A2E1E7324A64C2400AE76E6 /* OverviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
