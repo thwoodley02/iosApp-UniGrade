@@ -22,6 +22,12 @@
 		8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8D24A665D600AE76E6 /* YearModel.swift */; };
 		8A2E1E9024A6A57C00AE76E6 /* DataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */; };
 		8A2E1E9224A7486B00AE76E6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9124A7486B00AE76E6 /* UserModel.swift */; };
+		8A2E1E9424A7770E00AE76E6 /* TargetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9324A7770E00AE76E6 /* TargetCell.swift */; };
+		8A2E1E9624A77B4300AE76E6 /* PickTargetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9524A77B4300AE76E6 /* PickTargetsVC.swift */; };
+		8A2E1E9824A7ADF700AE76E6 /* AddTargetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9724A7ADF700AE76E6 /* AddTargetVC.swift */; };
+		8A2E1E9A24A7F8E200AE76E6 /* AddYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */; };
+		8A2E1E9C24A93BE300AE76E6 /* YearOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9B24A93BE300AE76E6 /* YearOverviewView.swift */; };
+		8A2E1E9E24A93ED000AE76E6 /* YearPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		8A2E1E8D24A665D600AE76E6 /* YearModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearModel.swift; sourceTree = "<group>"; };
 		8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
 		8A2E1E9124A7486B00AE76E6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		8A2E1E9324A7770E00AE76E6 /* TargetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCell.swift; sourceTree = "<group>"; };
+		8A2E1E9524A77B4300AE76E6 /* PickTargetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickTargetsVC.swift; sourceTree = "<group>"; };
+		8A2E1E9724A7ADF700AE76E6 /* AddTargetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTargetVC.swift; path = UniGrade/Controllers/AddTargetVC.swift; sourceTree = SOURCE_ROOT; };
+		8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYearVC.swift; sourceTree = "<group>"; };
+		8A2E1E9B24A93BE300AE76E6 /* YearOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearOverviewView.swift; sourceTree = "<group>"; };
+		8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */,
-				8A2E1E7024A6401E00AE76E6 /* Controllers */,
 				8A2E1E6F24A6401800AE76E6 /* Models */,
 				8A2E1E6E24A6400800AE76E6 /* Views */,
+				8A2E1E7024A6401E00AE76E6 /* Controllers */,
 				8A2E1E6024A63FD600AE76E6 /* Main.storyboard */,
 				8A2E1E6324A63FD700AE76E6 /* Assets.xcassets */,
 				8A2E1E6824A63FD700AE76E6 /* Info.plist */,
@@ -111,7 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E7224A64C2400AE76E6 /* OverviewView.swift */,
+				8A2E1E9B24A93BE300AE76E6 /* YearOverviewView.swift */,
 				8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */,
+				8A2E1E9324A7770E00AE76E6 /* TargetCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E5E24A63FD600AE76E6 /* OverviewPageVC.swift */,
+				8A2E1E9524A77B4300AE76E6 /* PickTargetsVC.swift */,
+				8A2E1E9724A7ADF700AE76E6 /* AddTargetVC.swift */,
+				8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */,
+				8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,12 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A2E1E9624A77B4300AE76E6 /* PickTargetsVC.swift in Sources */,
+				8A2E1E9824A7ADF700AE76E6 /* AddTargetVC.swift in Sources */,
 				8A2E1E5F24A63FD600AE76E6 /* OverviewPageVC.swift in Sources */,
 				8A2E1E7624A64D6F00AE76E6 /* OverviewModel.swift in Sources */,
 				8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */,
 				8A2E1E9024A6A57C00AE76E6 /* DataFile.swift in Sources */,
+				8A2E1E9424A7770E00AE76E6 /* TargetCell.swift in Sources */,
 				8A2E1E5B24A63FD600AE76E6 /* AppDelegate.swift in Sources */,
+				8A2E1E9C24A93BE300AE76E6 /* YearOverviewView.swift in Sources */,
+				8A2E1E9A24A7F8E200AE76E6 /* AddYearVC.swift in Sources */,
 				8A2E1E8C24A664FE00AE76E6 /* YearsOverviewCell.swift in Sources */,
+				8A2E1E9E24A93ED000AE76E6 /* YearPageVC.swift in Sources */,
 				8A2E1E5D24A63FD600AE76E6 /* SceneDelegate.swift in Sources */,
 				8A2E1E9224A7486B00AE76E6 /* UserModel.swift in Sources */,
 				8A2E1E7324A64C2400AE76E6 /* OverviewView.swift in Sources */,

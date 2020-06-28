@@ -20,14 +20,14 @@ class Overview {
     }
     
     func getAverageStr() -> String {
-        return roundToString(percentage: average)    }
+        return roundToPercentage(percentage: average)    }
     func getAchievedStr() -> String {
-        return roundToString(percentage: achieved)    }
+        return roundToPercentage(percentage: achieved)    }
     func getCompleteStr() -> String {
-        return roundToString(percentage: complete)    }
+        return roundToPercentage(percentage: complete)    }
     
     
-    func roundToString(percentage: Double) -> String {
+    func roundToPercentage(percentage: Double) -> String {
         let per: Int = Int(round(percentage))
         return "\(per)%"
     }
