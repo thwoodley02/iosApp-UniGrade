@@ -36,7 +36,6 @@ class PickTargetsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
     override func viewDidLoad() {
-        DataService.instance.initalise()
         super.viewDidLoad()
         targetTable.dataSource = self
         targetTable.delegate = self

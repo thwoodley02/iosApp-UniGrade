@@ -28,6 +28,7 @@
 		8A2E1E9A24A7F8E200AE76E6 /* AddYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */; };
 		8A2E1E9C24A93BE300AE76E6 /* YearOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9B24A93BE300AE76E6 /* YearOverviewView.swift */; };
 		8A2E1E9E24A93ED000AE76E6 /* YearPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */; };
+		8A6B159724A9F90A00C866F6 /* Year.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B159624A9F90A00C866F6 /* Year.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddYearVC.swift; sourceTree = "<group>"; };
 		8A2E1E9B24A93BE300AE76E6 /* YearOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearOverviewView.swift; sourceTree = "<group>"; };
 		8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPageVC.swift; sourceTree = "<group>"; };
+		8A6B159624A9F90A00C866F6 /* Year.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Year.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				8A2E1E6E24A6400800AE76E6 /* Views */,
 				8A2E1E7024A6401E00AE76E6 /* Controllers */,
 				8A2E1E6024A63FD600AE76E6 /* Main.storyboard */,
+				8A6B159624A9F90A00C866F6 /* Year.storyboard */,
 				8A2E1E6324A63FD700AE76E6 /* Assets.xcassets */,
 				8A2E1E6824A63FD700AE76E6 /* Info.plist */,
 				8A2E1E5C24A63FD600AE76E6 /* SceneDelegate.swift */,
@@ -245,6 +248,7 @@
 				8A2E1E6724A63FD700AE76E6 /* LaunchScreen.storyboard in Resources */,
 				8A2E1E6424A63FD700AE76E6 /* Assets.xcassets in Resources */,
 				8A2E1E6224A63FD600AE76E6 /* Main.storyboard in Resources */,
+				8A6B159724A9F90A00C866F6 /* Year.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

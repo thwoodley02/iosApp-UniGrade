@@ -11,7 +11,6 @@ import UIKit
 class YearsOverviewCell: UITableViewCell {
 
     @IBOutlet weak var yearView: YearOverviewView!
-    
 
     override func awakeFromNib() {
         super.awakeFromNib()

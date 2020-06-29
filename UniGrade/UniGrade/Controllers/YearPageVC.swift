@@ -10,9 +10,12 @@ import UIKit
 
 class YearPageVC: UIViewController {
     @IBOutlet weak var yearOverviewView: YearOverviewView!
+    
+    var year: Year!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        yearOverviewView.updateViews(year: year)
         //yearOverviewView.updateViews(year: year)
         // Do any additional setup after loading the view.
     }
@@ -21,7 +24,7 @@ class YearPageVC: UIViewController {
     }
     
     func setYear(year: Year) {
-        //self.year = year
+        self.year = year
     }
     
 }

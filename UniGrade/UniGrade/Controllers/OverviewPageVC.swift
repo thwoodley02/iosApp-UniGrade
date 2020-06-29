@@ -105,7 +105,10 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
             let popup = segue.destination as! AddYearVC
             popup.onSubmit = yearAdded
         } else if segue.identifier == "yearPageSegue" {
-            //Year Page
+            if let popup = segue.destination as? YearPageVC {                
+                assert(sender as? Year != nil)
+                popup.setYear(year: sender as! Year)
+            }
         }
     }
     
@@ -121,6 +124,13 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
     func yearAdded(_ data: Year) -> () {
         DataService.instance.getUser().addYear(year: data)
         yearTableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let years = DataService.instance.getUser().years {
+            let thisYear = years[indexPath.row]
+            performSegue(withIdentifier: "yearPageSegue", sender: thisYear)
+        }
     }
 
     
