@@ -57,6 +57,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6u-E6-tXl" customClass="OverviewView" customModule="UniGrade" customModuleProvider="target">
                                         <rect key="frame" x="20" y="15" width="374" height="132"/>
                                         <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteImage" translatesAutoresizingMaskIntoConstraints="NO" id="JFQ-QX-VAT">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="132"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="132" id="2De-wI-ZIs"/>
+                                                </constraints>
+                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-Qh-HRQ">
                                                 <rect key="frame" x="8" y="8" width="110" height="25"/>
                                                 <constraints>
@@ -134,10 +140,14 @@
                                         <constraints>
                                             <constraint firstItem="5nb-wq-dBb" firstAttribute="leading" secondItem="f6u-E6-tXl" secondAttribute="leading" constant="8" id="2EE-NS-VZZ"/>
                                             <constraint firstAttribute="trailing" secondItem="5nb-wq-dBb" secondAttribute="trailing" constant="8" id="3c5-Hl-xvD"/>
+                                            <constraint firstItem="JFQ-QX-VAT" firstAttribute="leading" secondItem="f6u-E6-tXl" secondAttribute="leading" id="5xU-vm-aBZ"/>
                                             <constraint firstItem="t8A-Cu-k7l" firstAttribute="top" secondItem="Uk7-Qh-HRQ" secondAttribute="bottom" constant="8" id="7K8-dg-M7g"/>
+                                            <constraint firstAttribute="bottom" secondItem="JFQ-QX-VAT" secondAttribute="bottom" id="ERY-S8-MY3"/>
+                                            <constraint firstAttribute="trailing" secondItem="JFQ-QX-VAT" secondAttribute="trailing" id="JEC-l9-7Cy"/>
                                             <constraint firstItem="Uk7-Qh-HRQ" firstAttribute="leading" secondItem="f6u-E6-tXl" secondAttribute="leading" constant="8" id="MLH-jf-4EI"/>
                                             <constraint firstAttribute="height" constant="132" id="NvR-Zq-SAl"/>
                                             <constraint firstItem="t8A-Cu-k7l" firstAttribute="leading" secondItem="f6u-E6-tXl" secondAttribute="leading" constant="8" id="YVa-Eg-Zf4"/>
+                                            <constraint firstItem="JFQ-QX-VAT" firstAttribute="top" secondItem="f6u-E6-tXl" secondAttribute="top" id="dx0-0o-2E9"/>
                                             <constraint firstAttribute="trailing" secondItem="t8A-Cu-k7l" secondAttribute="trailing" constant="8" id="oBe-Wm-JVb"/>
                                             <constraint firstItem="5nb-wq-dBb" firstAttribute="top" secondItem="t8A-Cu-k7l" secondAttribute="bottom" constant="24" id="qbK-dX-oXA"/>
                                             <constraint firstItem="Uk7-Qh-HRQ" firstAttribute="top" secondItem="f6u-E6-tXl" secondAttribute="top" constant="8" id="qhn-TQ-fiZ"/>
@@ -146,6 +156,7 @@
                                             <outlet property="achievedLbl" destination="C47-Qe-N4c" id="Fmv-1U-F0S"/>
                                             <outlet property="averageLbl" destination="et6-h0-vIf" id="HqI-6K-vuS"/>
                                             <outlet property="averageSlider" destination="5nb-wq-dBb" id="sZC-3S-Gfn"/>
+                                            <outlet property="backImage" destination="JFQ-QX-VAT" id="Lxv-IR-y0y"/>
                                             <outlet property="completeLbl" destination="lxN-lc-esB" id="gaa-CE-9hx"/>
                                         </connections>
                                     </view>
@@ -178,18 +189,18 @@
                                         <color key="backgroundColor" white="0.92233163539999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="sectionIndexBackgroundColor" white="0.92233163539999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yearCell" rowHeight="159" id="ZZk-5g-AQa" customClass="YearsOverviewCell" customModule="UniGrade" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="374" height="159"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="yearCell" rowHeight="170" id="ZZk-5g-AQa" customClass="YearsOverviewCell" customModule="UniGrade" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="170"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZZk-5g-AQa" id="jA8-Vc-J0I" customClass="YearOverviewView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="159"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZZk-5g-AQa" id="jA8-Vc-J0I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlZ-l1-yVB" customClass="YearOverviewView" customModule="UniGrade" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="159"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlZ-l1-yVB" customClass="OverviewView" customModule="UniGrade" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="170"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WhiteImage" translatesAutoresizingMaskIntoConstraints="NO" id="Zmd-F1-1c8">
-                                                                    <rect key="frame" x="0.0" y="6" width="374" height="147"/>
+                                                                    <rect key="frame" x="0.0" y="6" width="374" height="158"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3m-ad-RyX">
                                                                     <rect key="frame" x="15" y="10" width="96" height="26"/>
@@ -332,18 +343,19 @@
                                                                 <constraint firstItem="F3m-ad-RyX" firstAttribute="top" secondItem="QlZ-l1-yVB" secondAttribute="top" constant="10" id="dRK-xf-cQ0"/>
                                                                 <constraint firstItem="Zfa-o3-7LK" firstAttribute="top" secondItem="QlZ-l1-yVB" secondAttribute="top" constant="15" id="ka7-cK-kuF"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Zfa-o3-7LK" secondAttribute="trailing" constant="5" id="nAI-gM-BrX"/>
+                                                                <constraint firstAttribute="height" constant="170" id="pfw-I4-bv1"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Zmd-F1-1c8" secondAttribute="bottom" constant="6" id="prp-nE-9RO"/>
                                                                 <constraint firstItem="Zmd-F1-1c8" firstAttribute="top" secondItem="QlZ-l1-yVB" secondAttribute="top" constant="6" id="wlf-qV-z7n"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="achievedYearLbl" destination="ac7-DZ-00P" id="gTb-p0-PVI"/>
-                                                                <outlet property="averageProgressYearLbl" destination="7eJ-iX-yxx" id="Mjf-tv-QO4"/>
-                                                                <outlet property="averageYearLbl" destination="pXU-ca-7Qu" id="JUM-6G-inY"/>
-                                                                <outlet property="backimage" destination="Zmd-F1-1c8" id="7cD-P5-SJy"/>
-                                                                <outlet property="completeYearLbl" destination="Yi8-cQ-vWB" id="oOX-op-DGq"/>
-                                                                <outlet property="creditsYearLbl" destination="c8n-nW-4p8" id="EHL-hG-Pme"/>
-                                                                <outlet property="titleLbl" destination="F3m-ad-RyX" id="nIr-sZ-iTI"/>
-                                                                <outlet property="weightYearLbl" destination="aDe-up-tcS" id="TwM-PX-4Ht"/>
+                                                                <outlet property="achievedLbl" destination="ac7-DZ-00P" id="LD3-Yv-NAk"/>
+                                                                <outlet property="averageLbl" destination="pXU-ca-7Qu" id="faH-kp-j33"/>
+                                                                <outlet property="averageSlider" destination="7eJ-iX-yxx" id="df8-Hi-ewO"/>
+                                                                <outlet property="backImage" destination="Zmd-F1-1c8" id="1FF-DB-3VJ"/>
+                                                                <outlet property="completeLbl" destination="Yi8-cQ-vWB" id="5mh-Tr-OBi"/>
+                                                                <outlet property="creditsLbl" destination="c8n-nW-4p8" id="Nv3-of-XjI"/>
+                                                                <outlet property="titleLbl" destination="F3m-ad-RyX" id="74k-qj-tUt"/>
+                                                                <outlet property="weightLbl" destination="aDe-up-tcS" id="nXK-fz-mE5"/>
                                                             </connections>
                                                         </view>
                                                     </subviews>
@@ -357,7 +369,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.92233163539999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <outlet property="yearView" destination="QlZ-l1-yVB" id="WWB-K2-Eld"/>
+                                                    <outlet property="overview" destination="QlZ-l1-yVB" id="U6Y-le-efy"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -417,7 +429,7 @@
         <!--Add YearVC-->
         <scene sceneID="rWl-xU-38g">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="rdI-FR-Lzc" customClass="AddYearVC" customModule="UniGrade" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newYear" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="rdI-FR-Lzc" customClass="AddYearVC" customModule="UniGrade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SRJ-kU-dtB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -592,6 +604,7 @@
                         <outlet property="closeButton" destination="xJe-ev-dDp" id="Vpu-9p-3ry"/>
                         <outlet property="creditsErrorLbl" destination="5E8-cV-oZm" id="AQO-DY-IFC"/>
                         <outlet property="creditsLbl" destination="VNB-OU-rX1" id="u9h-S4-Hc6"/>
+                        <outlet property="overallTitleLbl" destination="uX2-wa-FeI" id="Avi-Yu-QIE"/>
                         <outlet property="percentageErrorLbl" destination="kFd-Vv-rI0" id="tKk-7L-qfr"/>
                         <outlet property="percentageLbl" destination="GtT-Uc-9Lm" id="Wzp-68-iuh"/>
                         <outlet property="submitButton" destination="vX2-Fm-p19" id="Hf6-Bk-2cX"/>
@@ -656,7 +669,7 @@
                                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvs-sj-hSP">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvs-sj-hSP">
                                                             <rect key="frame" x="290" y="12" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="Y5a-f3-lmC"/>
@@ -694,7 +707,7 @@
                                             <action selector="doneButtonClicked:" destination="i2B-Sq-wPe" eventType="touchUpInside" id="cO2-yx-9gp"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txA-WT-uVQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txA-WT-uVQ">
                                         <rect key="frame" x="296" y="20.666666666666671" width="30" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="7aT-8p-pxh"/>

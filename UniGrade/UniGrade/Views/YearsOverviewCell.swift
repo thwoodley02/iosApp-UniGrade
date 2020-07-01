@@ -9,17 +9,17 @@
 import UIKit
 
 class YearsOverviewCell: UITableViewCell {
-
-    @IBOutlet weak var yearView: YearOverviewView!
+    
+    @IBOutlet weak var overview: OverviewView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    public func updateViews(year: Year) {
-        yearView.updateViews(year: year)
-    }
     
+    public func updateViews(year: Year) {
+        overview.updateViews(overview: year)
+    }
     
 }

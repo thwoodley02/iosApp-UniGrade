@@ -29,18 +29,15 @@ class User {
     }
     
     func getColorFromPercentage(percentage: Int) -> UIColor {
-        switch percentage {
-        case targets![0]:
-            return UIColor(hue: 97.0/360.0, saturation: 0.9, brightness: 0.86, alpha: 1)
-        case targets![1]:
-            return UIColor(hue: 77.0/360.0, saturation: 0.9, brightness: 0.86, alpha: 1)
-        case targets![2]:
-            return UIColor(hue: 57.0/360.0, saturation: 0.9, brightness: 0.86, alpha: 1)
-        case targets![3]:
-            return UIColor(hue: 37.0/360.0, saturation: 0.9, brightness: 0.86, alpha: 1)
-        default:
-            return UIColor(hue: 104.0/360.0, saturation: 0.9, brightness: 0.86, alpha: 1)
+        var hue: Double = 0
+        if percentage > 70 {
+            hue = 97.0 + (Double(percentage) - 70.0)
+        } else if percentage < 40 {
+            hue = 17.0 + (Double(percentage)*0.5)
+        } else {
+            hue = 37.0 + (Double(percentage - 40)*2)
         }
+        return UIColor(hue: CGFloat(hue/360.0), saturation: 0.9, brightness: 0.86, alpha: 1)
     }
     
     func addYear(year: Year) {
@@ -50,4 +47,35 @@ class User {
             self.years = [year]
         }
     }
+    
+    func deleteYear(year: Year) {
+        if let years = self.years {
+            if let place = findYear(year: year) {
+                self.years!.remove(at: place)
+            }
+        } else {
+            self.years = [year]
+        }
+    }
+    
+    func findYear(year: Year) -> Int? {
+        if let years = self.years {
+            for i in 0..<years.count {
+                if years[i].title == year.title {
+                    return i
+                }
+            }
+        }
+        return nil
+    }
+    
+    func updateYear(year: Year) {
+        if let years = self.years {
+            if let place = findYear(year: year) {
+                self.years![place] = year
+            }
+        }
+        
+    }
+    
 }

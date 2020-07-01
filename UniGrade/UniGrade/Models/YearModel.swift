@@ -13,13 +13,15 @@ struct Year {
     private(set) public var credits: Int
     private(set) public var weight: Double
     private var yearoverview: Overview?
+    private(set) public var modules: [Module]?
     
     
-    init(title: String, credits: Int, weight: Double, yearoverview: Overview?) {
+    init(title: String, credits: Int, weight: Double, yearoverview: Overview?, modules: [Module]?) {
         self.title = title
         self.credits = credits
         self.weight = weight
         self.yearoverview = yearoverview
+        self.modules = modules
     }
     
     func getAverageStr() -> String {
@@ -52,5 +54,12 @@ struct Year {
         return "\(credits) Credits"    }
     func getWeightStr() -> String {
         return "\(Int(round(weight)))% Weight" }
+    func getOverview() -> Overview? {
+        if let overview = yearoverview {
+            return overview
+        } else {
+            return nil
+        }
+    }
         
 }

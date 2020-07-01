@@ -16,7 +16,6 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var slider: UIProgressView!
     @IBOutlet weak var pageView: UIView!
     
-    var targetImages: [UIImageView] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let years = DataService.instance.getUser().years {
@@ -61,10 +60,9 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //Drawing Targets
         
-        drawAllTargets()
-        
     }
     
+    /*
     
     func drawTarget(percentage: Double, color: UIColor) {
         let widthOfSlider: Double = Double(overviewView.frame.size.width) - 16
@@ -85,6 +83,7 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+ */
     
     /*
     @objc private func imageTapped(_ recognizer: UITapGestureRecognizer) {
@@ -108,17 +107,15 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
             if let popup = segue.destination as? YearPageVC {                
                 assert(sender as? Year != nil)
                 popup.setYear(year: sender as! Year)
+                popup.onYearDelete = yearDeleted
             }
         }
     }
     
     
     func targetsReturned(_ targets: [Int]) -> () {
-        for images in targetImages {
-            images.removeFromSuperview()
-        }
-        DataService.instance.getUser().setTargets(targets: targets)
-        drawAllTargets()
+        overviewView.targetsChanged(targets: targets)
+        yearTableView.reloadData()
     }
     
     func yearAdded(_ data: Year) -> () {
@@ -131,6 +128,10 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
             let thisYear = years[indexPath.row]
             performSegue(withIdentifier: "yearPageSegue", sender: thisYear)
         }
+    }
+    
+    func yearDeleted() {
+        yearTableView.reloadData()
     }
 
     

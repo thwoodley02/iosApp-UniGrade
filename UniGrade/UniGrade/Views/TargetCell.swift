@@ -10,7 +10,6 @@ import UIKit
 
 class TargetCell: UITableViewCell {
     @IBOutlet weak var controller: UIViewController!
-    @IBOutlet var targetImage: UIImageView!
     @IBOutlet weak var targetLbl: UILabel!
     @IBOutlet weak var binImage: UIButton!
     @IBOutlet weak var targetCell: UIView!

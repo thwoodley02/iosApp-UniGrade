@@ -10,9 +10,12 @@ import UIKit
 
 class AddYearVC: UIViewController {
     
+    @IBOutlet weak var overallTitleLbl: UILabel!
+    
     @IBOutlet weak var titleLbl: UITextField!
     @IBOutlet weak var creditsLbl: UITextField!
     @IBOutlet weak var percentageLbl: UITextField!
+    
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var thisView: UIView!
@@ -22,14 +25,32 @@ class AddYearVC: UIViewController {
     @IBOutlet weak var percentageErrorLbl: UILabel!
     
     var onSubmit: ((_ data: Year) -> ())?
+    var onUpdate: ((_ data: Year) -> ())?
+    
+    var isNew: Bool = true
+    var year: Year?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !isNew {
+            overallTitleLbl.text = "Edit Year"
+            if let y = year as? Year {
+                titleLbl.text = y.title
+                creditsLbl.text = "\(y.credits)"
+                percentageLbl.text = "\(y.weight)"
+            }
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(AddYearVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(AddYearVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // Do any additional setup after loading the view.
     }
+    
+    func setNew(year: Year) {
+        self.isNew = false
+        self.year = year
+    }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
     guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -52,12 +73,19 @@ class AddYearVC: UIViewController {
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        let check1 = checkTitle(title: titleLbl.text ?? "Error")
+        var check1 = checkTitle(title: titleLbl.text ?? "Error")
+        if !isNew {
+            check1 = true
+        }
         let check2 = checkCredits(credits: creditsLbl.text ?? "Error")
         let check3 = checkWeight(weight: percentageLbl.text ?? "Error")
         if  check1 && check2 && check3 {
-            let year = Year(title: titleLbl.text!, credits: Int(creditsLbl.text!)!, weight: Double(percentageLbl.text!)!, yearoverview: nil)
-            onSubmit?(year)
+            let year = Year(title: titleLbl.text!, credits: Int(creditsLbl.text!)!, weight: Double(percentageLbl.text!)!, yearoverview: nil, modules: nil)
+            if isNew {
+                onSubmit?(year)
+            } else {
+                onUpdate?(year)
+            }
             dismiss(animated: true)
         }
     }
