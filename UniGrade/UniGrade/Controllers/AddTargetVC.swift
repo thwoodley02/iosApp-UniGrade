@@ -25,7 +25,7 @@ class AddTargetVC: UIViewController {
     @IBAction func addButtonClicked(_ sender: UIButton) {
         let text = targetText.text
         var reply: String = ""
-        if let num = Double(text!) {
+        if Double(text!) != nil {
             if let numInt = Int(text!) {
                 if numInt <= 100 && numInt >= 0 {
                     reply = "Perfect"

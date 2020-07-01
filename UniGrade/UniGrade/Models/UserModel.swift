@@ -20,6 +20,26 @@ class User {
         self.targets = targets
     }
     
+    func updateUser() {
+        var grandOverall: Overview? = nil
+        if let years: [Year] = self.years {
+            var max: Double = 0
+            var mark: Double = 0
+            for year in years {
+                year.updateOverview()
+                if let over: Overview = year.getOverview() {
+                    max += (year.weight/100) * (over.complete/100)
+                    mark += (year.weight/100) * (over.achieved/100)
+                }
+            }
+            if max > 0
+            {
+                grandOverall = Overview(average: (mark/max) * 100, achieved: mark * 100, complete: max * 100)
+            }
+        }
+        self.grandoverall = grandOverall
+    }
+    
     func getTargetColor(target: CGFloat) -> UIColor {
         return UIColor.init(hue: (((93.0-17.0)*(target/100)) + 17.0)/360, saturation: 97.0/100.0, brightness: 77.0/100.0, alpha: 1.0)
     }
@@ -61,7 +81,7 @@ class User {
     func findYear(year: Year) -> Int? {
         if let years = self.years {
             for i in 0..<years.count {
-                if years[i].title == year.title {
+                if years[i].id == year.id {
                     return i
                 }
             }
@@ -76,6 +96,14 @@ class User {
             }
         }
         
+    }
+    
+    func removeTitleFromYear(year: Year) {
+        if let years = self.years {
+            if let place = findYear(year: year) {
+                self.years![place].setTitle(title: "error")
+            }
+        }
     }
     
 }

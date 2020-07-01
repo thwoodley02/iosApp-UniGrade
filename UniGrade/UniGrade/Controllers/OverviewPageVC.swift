@@ -43,6 +43,7 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         DataService.instance.initalise()
         super.viewDidLoad()
+        updateView()
         if let overview = DataService.instance.getUser().grandoverall {
             overviewView.updateViews(overview: overview)
         }
@@ -107,7 +108,7 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
             if let popup = segue.destination as? YearPageVC {                
                 assert(sender as? Year != nil)
                 popup.setYear(year: sender as! Year)
-                popup.onYearDelete = yearDeleted
+                popup.updatePreviousView = updateView
             }
         }
     }
@@ -130,10 +131,13 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func yearDeleted() {
+    func updateView() {
+        DataService.instance.getUser().updateUser()
         yearTableView.reloadData()
+        if let overview = DataService.instance.getUser().grandoverall {
+            overviewView.updateViews(overview: overview)
+        }
     }
-
     
     
 }

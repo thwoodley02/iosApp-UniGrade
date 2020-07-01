@@ -16,7 +16,7 @@ class YearPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var year: Year!
     
-    var onYearDelete: (() -> ())?
+    var updatePreviousView: (() -> ())?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -82,6 +82,7 @@ class YearPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         overviewView.updateViews(overview: year)
         titlePageLbl.text = year.getTitleStr()
     }
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true)
     }
@@ -97,20 +98,44 @@ class YearPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 popup.onDelete = yearDeleted
                 popup.onUpdate = yearUpdated
             }
+        } else if segue.identifier == "addModuleSegue" {
+            if let popup = segue.destination as? AddModuleVC {
+                popup.setYear(year: self.year)
+                popup.onSubmit = newModule(_:)
+            }
+        } else if segue.identifier == "modulePageSegue" {
+            if let popup = segue.destination as? ModulePageVC {
+                assert(sender as? Module != nil)
+                popup.setModule(module: sender as! Module)
+            }
         }
     }
     
     func yearDeleted() -> () {
         self.dismiss(animated: true)
         self.dismiss(animated: true)
-        onYearDelete?()
+        updatePreviousView?()
     }
     
     func yearUpdated(_ data: Year) -> () {
         self.year = data
         loadData()
+        updatePreviousView?()
         
         //Should reload data on overview
     }
     
+    func newModule(_ data: Module) -> () {
+        year.addModule(module: data)
+        loadData()
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 3 {
+            let thisModule = year.modules![indexPath.row] //, sender: thisModule
+            performSegue(withIdentifier: "modulePageSegue", sender: thisModule)
+        }
+        
+    }
 }

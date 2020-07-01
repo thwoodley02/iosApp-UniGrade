@@ -32,6 +32,11 @@
 		8A6B15A124AB6D4300C866F6 /* ModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15A024AB6D4300C866F6 /* ModuleModel.swift */; };
 		8A6B15A324AB6FD100C866F6 /* AssessmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15A224AB6FD100C866F6 /* AssessmentModel.swift */; };
 		8A6B15A524ABB5B600C866F6 /* YearPencilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15A424ABB5B600C866F6 /* YearPencilVC.swift */; };
+		8A6B15A724ACD63D00C866F6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15A624ACD63D00C866F6 /* Extensions.swift */; };
+		8A6B15A924ACEC3700C866F6 /* AddModuleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15A824ACEC3700C866F6 /* AddModuleVC.swift */; };
+		8A6B15AB24ACFB0800C866F6 /* Module.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B15AA24ACFB0800C866F6 /* Module.storyboard */; };
+		8A6B15AD24ACFB5F00C866F6 /* ModulePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */; };
+		8A6B15AF24ACFCD000C866F6 /* AssessmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15AE24ACFCD000C866F6 /* AssessmentsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		8A6B15A024AB6D4300C866F6 /* ModuleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleModel.swift; sourceTree = "<group>"; };
 		8A6B15A224AB6FD100C866F6 /* AssessmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentModel.swift; sourceTree = "<group>"; };
 		8A6B15A424ABB5B600C866F6 /* YearPencilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPencilVC.swift; sourceTree = "<group>"; };
+		8A6B15A624ACD63D00C866F6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8A6B15A824ACEC3700C866F6 /* AddModuleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModuleVC.swift; sourceTree = "<group>"; };
+		8A6B15AA24ACFB0800C866F6 /* Module.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Module.storyboard; sourceTree = "<group>"; };
+		8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulePageVC.swift; sourceTree = "<group>"; };
+		8A6B15AE24ACFCD000C866F6 /* AssessmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +124,13 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E8F24A6A57C00AE76E6 /* DataFile.swift */,
+				8A6B15A624ACD63D00C866F6 /* Extensions.swift */,
 				8A2E1E6F24A6401800AE76E6 /* Models */,
 				8A2E1E6E24A6400800AE76E6 /* Views */,
 				8A2E1E7024A6401E00AE76E6 /* Controllers */,
 				8A2E1E6024A63FD600AE76E6 /* Main.storyboard */,
 				8A6B159624A9F90A00C866F6 /* Year.storyboard */,
+				8A6B15AA24ACFB0800C866F6 /* Module.storyboard */,
 				8A2E1E6324A63FD700AE76E6 /* Assets.xcassets */,
 				8A2E1E6824A63FD700AE76E6 /* Info.plist */,
 				8A2E1E5C24A63FD600AE76E6 /* SceneDelegate.swift */,
@@ -135,6 +147,7 @@
 				8A2E1E8B24A664FE00AE76E6 /* YearsOverviewCell.swift */,
 				8A2E1E9324A7770E00AE76E6 /* TargetCell.swift */,
 				8A6B159E24AA327700C866F6 /* YearCells.swift */,
+				8A6B15AE24ACFCD000C866F6 /* AssessmentsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +173,8 @@
 				8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */,
 				8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */,
 				8A6B15A424ABB5B600C866F6 /* YearPencilVC.swift */,
+				8A6B15A824ACEC3700C866F6 /* AddModuleVC.swift */,
+				8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -255,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A2E1E6724A63FD700AE76E6 /* LaunchScreen.storyboard in Resources */,
+				8A6B15AB24ACFB0800C866F6 /* Module.storyboard in Resources */,
 				8A2E1E6424A63FD700AE76E6 /* Assets.xcassets in Resources */,
 				8A2E1E6224A63FD600AE76E6 /* Main.storyboard in Resources */,
 				8A6B159724A9F90A00C866F6 /* Year.storyboard in Resources */,
@@ -275,13 +291,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6B15A924ACEC3700C866F6 /* AddModuleVC.swift in Sources */,
 				8A6B15A124AB6D4300C866F6 /* ModuleModel.swift in Sources */,
 				8A2E1E9624A77B4300AE76E6 /* PickTargetsVC.swift in Sources */,
+				8A6B15AD24ACFB5F00C866F6 /* ModulePageVC.swift in Sources */,
 				8A6B15A524ABB5B600C866F6 /* YearPencilVC.swift in Sources */,
+				8A6B15AF24ACFCD000C866F6 /* AssessmentsCell.swift in Sources */,
 				8A2E1E9824A7ADF700AE76E6 /* AddTargetVC.swift in Sources */,
 				8A6B15A324AB6FD100C866F6 /* AssessmentModel.swift in Sources */,
 				8A2E1E5F24A63FD600AE76E6 /* OverviewPageVC.swift in Sources */,
 				8A2E1E7624A64D6F00AE76E6 /* OverviewModel.swift in Sources */,
+				8A6B15A724ACD63D00C866F6 /* Extensions.swift in Sources */,
 				8A2E1E8E24A665D600AE76E6 /* YearModel.swift in Sources */,
 				8A2E1E9024A6A57C00AE76E6 /* DataFile.swift in Sources */,
 				8A2E1E9424A7770E00AE76E6 /* TargetCell.swift in Sources */,

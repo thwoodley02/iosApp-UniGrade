@@ -40,8 +40,6 @@ class AddYearVC: UIViewController {
                 percentageLbl.text = "\(y.weight)"
             }
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(AddYearVC.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(AddYearVC.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -50,37 +48,30 @@ class AddYearVC: UIViewController {
         self.isNew = false
         self.year = year
     }
-    
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-    guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-       // if keyboard size is not available for some reason, dont do anything
-       return
-    }
-        thisView.frame.origin.y = self.view.frame.size.height - ( thisView.frame.size.height + keyboardSize.height)
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-      // move back the root view origin to zero
-        thisView.frame.origin.y = (self.view.frame.size.height/2) - (thisView.frame.size.height/2)
-    }
         
     
-    
     @IBAction func closeButtonClicked(_ sender: UIButton) {
-        print("Reached")
         dismiss(animated: true)
     }
     
     @IBAction func submitButtonClicked(_ sender: UIButton) {
-        var check1 = checkTitle(title: titleLbl.text ?? "Error")
+        let check1 = checkTitle(title: titleLbl.text ?? "Error")
+        var oldid: Int64
+        var oldYearOverview: Overview?
+        var oldModules: [Module]?
         if !isNew {
-            check1 = true
+            oldid = year!.id
+            oldYearOverview = year!.getOverview()
+            oldModules = year!.modules
+        } else {
+            oldid = Date().currentTimeMillis()
+            oldYearOverview = nil
+            oldModules = nil
         }
         let check2 = checkCredits(credits: creditsLbl.text ?? "Error")
         let check3 = checkWeight(weight: percentageLbl.text ?? "Error")
         if  check1 && check2 && check3 {
-            let year = Year(title: titleLbl.text!, credits: Int(creditsLbl.text!)!, weight: Double(percentageLbl.text!)!, yearoverview: nil, modules: nil)
+            let year = Year(id: oldid, title: titleLbl.text!, credits: Int(creditsLbl.text!)!, weight: Double(percentageLbl.text!)!, yearoverview: oldYearOverview, modules: oldModules)
             if isNew {
                 onSubmit?(year)
             } else {
@@ -93,6 +84,10 @@ class AddYearVC: UIViewController {
     func checkTitle(title: String) -> Bool {
         if let num = Int(title) {
             if let years = DataService.instance.getUser().years {
+                if !isNew {
+                    DataService.instance.getUser().removeTitleFromYear(year: year!)
+                }
+                
                 var alreadyExists = false
                 for year in years {
                     if title == year.title {
@@ -116,7 +111,7 @@ class AddYearVC: UIViewController {
     }
     
     func checkCredits(credits: String) -> Bool {
-        if let num = Int(credits) {
+        if Int(credits) != nil {
             creditsErrorLbl.isHidden = true
             return true
         } else {
@@ -130,6 +125,9 @@ class AddYearVC: UIViewController {
         if let num = Double(weight) {
             if let years = DataService.instance.getUser().years {
                 var weightLeft: Double = 100
+                if !isNew {
+                    weightLeft += year!.weight
+                }
                 for year in years {
                     weightLeft -= year.weight
                 }

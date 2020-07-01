@@ -8,10 +8,18 @@
 
 import Foundation
 
-struct Assessment {
+class Assessment {
+    private(set) public var id: Int64
     private(set) public var title: String
+    private(set) public var isPlaceholder: Bool
+    private(set) public var weight: Double
+    private(set) public var mark: Double
     
-    init(title: String) {
+    init(id: Int64, title: String, isPlaceholder: Bool, weight: Double, mark: Double) {
+        self.id = id
         self.title = title
+        self.isPlaceholder = false
+        self.weight = weight
+        self.mark = mark
     }
 }

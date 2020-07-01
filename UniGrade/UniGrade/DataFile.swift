@@ -16,11 +16,12 @@ class DataService {
     func initalise() {
         
         let genOverview: Overview = Overview(average: 65, achieved: 6.5, complete: 10)
-        let genmodule = Module(title: "Computer Vision", credits: 20, moduleOverview: genOverview, assessments: nil)
-        let year1 = Year(title: "1", credits: 120, weight: 20, yearoverview: genOverview, modules: [genmodule])
-        let year2 = Year(title: "2", credits: 120, weight: 20, yearoverview: genOverview, modules: [genmodule])
-        let year3 = Year(title: "3", credits: 120, weight: 20, yearoverview: genOverview, modules: nil)
-        let year4 = Year(title: "4", credits: 120, weight: 20, yearoverview: nil, modules: nil)
+        let asses = Assessment(id: 0, title: "Whole Module", isPlaceholder: false, weight: 50, mark: 60)
+        let genmodule = Module(id: 1, title: "Computer Vision", credits: 20, moduleOverview: genOverview, assessments: [asses])
+        let year1 = Year(id: 2, title: "1", credits: 120, weight: 20, yearoverview: genOverview, modules: [genmodule])
+        let year2 = Year(id: 3, title: "2", credits: 120, weight: 20, yearoverview: genOverview, modules: [genmodule])
+        let year3 = Year(id: 4, title: "3", credits: 120, weight: 20, yearoverview: genOverview, modules: nil)
+        let year4 = Year(id: 5, title: "4", credits: 120, weight: 20, yearoverview: nil, modules: nil)
         let years = [year1, year2, year3, year4]
         
         let user = User(grandoverall: genOverview, years: years, targets: [70, 60, 50, 40])
