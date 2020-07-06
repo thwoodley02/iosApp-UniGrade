@@ -2,29 +2,26 @@
 //  TargetTitleCell.swift
 //  UniGrade
 //
-//  Created by Tom Woodley on 29/06/2020.
+//  Created by Tom Woodley on 03/07/2020.
 //  Copyright © 2020 Tom Woodley. All rights reserved.
 //
 
 import UIKit
 
-class TargetTitleCell: UITableViewCell {
+class TargetTitleCell: UICollectionViewCell {
     @IBOutlet weak var titleCellView: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleCellView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        //titleCellView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
+        titleCellView.clipsToBounds = true
+        titleCellView.layer.cornerRadius = 10
+        titleCellView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
 }
 
-class TargetContentCell: UITableViewCell {
+class TargetContentCell: UICollectionViewCell {
     
     @IBOutlet weak var targetLbl: UILabel!
     @IBOutlet weak var remainingAverageLbl: UILabel!
@@ -35,11 +32,6 @@ class TargetContentCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func updateViews(thisOverview: Overview?, rowNum: Int) {
         if let targets = DataService.instance.getUser().targets {
@@ -53,7 +45,9 @@ class TargetContentCell: UITableViewCell {
             
             //check if bottom corners should be rounded
             if rowNum == (targets.count - 1) {
-                targetCell.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 10)
+                targetCell.clipsToBounds = true
+                targetCell.layer.cornerRadius = 10
+                targetCell.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             }
             targetLbl.text = "\(thisTarget)%"
             if let overview = thisOverview {
@@ -82,31 +76,3 @@ class TargetContentCell: UITableViewCell {
     }
 
 }
-
-class ModuleTitleCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
-}
-
-class ModuleContentCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var overview: OverviewView!
-    
-    public func updateViews(module: Module) {
-        overview.updateViews(overview: module)
-    }
-
-}
-
-

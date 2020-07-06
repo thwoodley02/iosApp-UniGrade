@@ -21,11 +21,11 @@ class PickTargetsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "targetCell") as? TargetCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "targetCell") as? TargetViewCell {
             cell.updateViews(target: targets[indexPath.row])
             return cell
         } else {
-            return TargetCell()
+            return TargetViewCell()
         }
     }
     
@@ -50,7 +50,7 @@ class PickTargetsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "newTargetSegue" {
+        if segue.identifier == TONewTargetSegue {
             let popup = segue.destination as! AddTargetVC
             popup.onAdd = targetAdded
         }

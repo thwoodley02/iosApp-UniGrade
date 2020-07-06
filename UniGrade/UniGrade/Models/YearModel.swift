@@ -82,7 +82,7 @@ class Year {
     func getCreditsStr() -> String {
         return "\(credits) Credits"    }
     func getWeightStr() -> String {
-        return "\(Int(round(weight)))% Weight" }
+        return "\(Int(round(weight)))% Weighting" }
     func getOverview() -> Overview? {
         if let overview = yearoverview {
             return overview
@@ -101,6 +101,36 @@ class Year {
         } else {
             modules = [module]
         }
+    }
+    
+    func deleteModule(module: Module) {
+        if let modules = self.modules {
+            if let place = findModule(module: module) {
+                self.modules!.remove(at: place)
+            }
+        } else {
+            self.modules = [module]
+        }
+    }
+    
+    func findModule(module: Module) -> Int? {
+        if let mods = self.modules {
+            for i in 0..<mods.count {
+                if mods[i].id == module.id {
+                    return i
+                }
+            }
+        }
+        return nil
+    }
+    
+    func updateModule(module: Module) {
+        if let mods = self.modules {
+            if let place = findModule(module: module) {
+                self.modules![place] = module
+            }
+        }
+        
     }
         
 }

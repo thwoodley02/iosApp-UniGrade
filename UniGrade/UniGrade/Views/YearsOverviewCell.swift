@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YearsOverviewCell: UITableViewCell {
+class YearsOverviewCell: UICollectionViewCell {
     
     @IBOutlet weak var overview: OverviewView!
 
@@ -18,7 +18,8 @@ class YearsOverviewCell: UITableViewCell {
     }
     
     
-    public func updateViews(year: Year) {
+    public func updateViews(year: Year, cellWidth: CGFloat) {
+        overview.cellWidth = cellWidth
         overview.updateViews(overview: year)
     }
     

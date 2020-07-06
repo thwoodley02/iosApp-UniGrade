@@ -8,33 +8,55 @@
 
 import UIKit
 
-class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OverviewPageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var overviewView: OverviewView!
-    @IBOutlet weak var yearTableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var targetButton: UIButton!
     @IBOutlet weak var slider: UIProgressView!
     @IBOutlet weak var pageView: UIView!
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let years = DataService.instance.getUser().years {
             return years.count
         } else {
             return 0
         }
-        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "yearCell") as? YearsOverviewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: YEarCell, for: indexPath) as? YearsOverviewCell {
             if let years = DataService.instance.getUser().years {
-                cell.updateViews(year: years[indexPath.row])
+                var width: CGFloat = 0
+                if traitCollection.horizontalSizeClass == .regular {
+                    width = (collectionView.bounds.size.width / 2) - 10
+                } else {
+                    width = collectionView.bounds.size.width
+                }
+                cell.updateViews(year: years[indexPath.row], cellWidth: width)
             }
             return cell
         } else {
             return YearsOverviewCell()
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width: CGFloat = 0
+        if traitCollection.horizontalSizeClass == .regular {
+            width = (collectionView.bounds.size.width / 2) - 10
+        } else {
+            width = collectionView.bounds.size.width
+        }
+        
+        return CGSize(width: width, height: 155)
+    }
+ 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let years = DataService.instance.getUser().years {
+            let thisYear = years[indexPath.row]
+            performSegue(withIdentifier: TOYearPageSegue, sender: thisYear)
         }
     }
     
@@ -45,55 +67,39 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         updateView()
         if let overview = DataService.instance.getUser().grandoverall {
+            overviewView.cellWidth = UIScreen.main.bounds.width - 20
             overviewView.updateViews(overview: overview)
         }
-        yearTableView.dataSource = self
-        yearTableView.delegate = self
-        yearTableView.rowHeight = 170
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
         //Layout Edits
-        overviewView.layer.cornerRadius = 10.0
         targetButton.layer.cornerRadius = 20.0
         
-        //targetButton.isUserInteractionEnabled = true
-        //targetImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
-        
-        //Drawing Targets
-        
     }
     
-    /*
     
-    func drawTarget(percentage: Double, color: UIColor) {
-        let widthOfSlider: Double = Double(overviewView.frame.size.width) - 16
-        let x: Double = (widthOfSlider*(percentage/100))
-        
-        let imageView = UIImageView(image: UIImage(named:"pin-1.png")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate))
-
-        imageView.tintColor = color
-        imageView.frame = CGRect(x: CGFloat(x), y: 100, width: 15, height: 15)
-        targetImages.append(imageView)
-        overviewView.addSubview(imageView)
-    }
-    
-    func drawAllTargets() {
-        if let targets = DataService.instance.getUser().targets {
-            for target in targets {
-                drawTarget(percentage: Double(target), color: DataService.instance.getUser().getColorFromPercentage(percentage: target))
-            }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        collectionView.layoutMarginsDidChange()
+        collectionView.reloadData()
+        overviewView.redrawTargets()
+        if let overview = DataService.instance.getUser().grandoverall {
+            overviewView.cellWidth = UIScreen.main.bounds.width - 20
+            overviewView.updateViews(overview: overview)
         }
     }
- */
     
-    /*
-    @objc private func imageTapped(_ recognizer: UITapGestureRecognizer) {
-        performSegue(withIdentifier: "targetSegue", sender: self)
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+        name: UIDevice.orientationDidChangeNotification,
+        object: nil)
     }
- */
     
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "targetSegue" {
+        if segue.identifier == TOTargetSegue {
             let popup = segue.destination as! PickTargetsVC
             if let targets = DataService.instance.getUser().targets {
                 popup.targets = targets
@@ -101,10 +107,10 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 popup.targets = []
             }
             popup.onDone = targetsReturned
-        } else if segue.identifier == "addYearSegue" {
+        } else if segue.identifier == TOAddYearSegue {
             let popup = segue.destination as! AddYearVC
             popup.onSubmit = yearAdded
-        } else if segue.identifier == "yearPageSegue" {
+        } else if segue.identifier == TOYearPageSegue {
             if let popup = segue.destination as? YearPageVC {                
                 assert(sender as? Year != nil)
                 popup.setYear(year: sender as! Year)
@@ -116,24 +122,17 @@ class OverviewPageVC: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func targetsReturned(_ targets: [Int]) -> () {
         overviewView.targetsChanged(targets: targets)
-        yearTableView.reloadData()
+        collectionView.reloadData()
     }
     
     func yearAdded(_ data: Year) -> () {
         DataService.instance.getUser().addYear(year: data)
-        yearTableView.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let years = DataService.instance.getUser().years {
-            let thisYear = years[indexPath.row]
-            performSegue(withIdentifier: "yearPageSegue", sender: thisYear)
-        }
+        collectionView.reloadData()
     }
     
     func updateView() {
         DataService.instance.getUser().updateUser()
-        yearTableView.reloadData()
+        collectionView.reloadData()
         if let overview = DataService.instance.getUser().grandoverall {
             overviewView.updateViews(overview: overview)
         }

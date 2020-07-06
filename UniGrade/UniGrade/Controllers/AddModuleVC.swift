@@ -35,6 +35,10 @@ class AddModuleVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !isNew {
+            moduleNameField.text = thisModule!.title
+            creditsField.text = "\(thisModule!.credits)"
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -66,6 +70,7 @@ class AddModuleVC: UIViewController {
                     if isNew {
                         onSubmit?(module)
                     } else {
+                        thisYear.updateModule(module: module)
                         onUpdate?(module)
                     }
                     self.dismiss(animated: true)

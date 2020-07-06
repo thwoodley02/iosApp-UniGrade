@@ -9,6 +9,7 @@
 import UIKit
 
 class AssessmentsCell: UITableViewCell {
+    @IBOutlet weak var thisView: OverviewView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +20,10 @@ class AssessmentsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateViews(assesment: Assessment) {
+        thisView.updateViews(overview: assesment)
     }
 
 }

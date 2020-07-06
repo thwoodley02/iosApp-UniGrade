@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TargetCell: UITableViewCell {
+class TargetViewCell: UITableViewCell {
     @IBOutlet weak var controller: UIViewController!
     @IBOutlet weak var targetLbl: UILabel!
     @IBOutlet weak var binImage: UIButton!
@@ -32,13 +32,6 @@ class TargetCell: UITableViewCell {
         tar = target
         let user = DataService.instance.getUser()
         
-        /*
-        let imageView = UIImageView(image: UIImage(named:"pin-1.png")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate))
-        imageView.tintColor = color
-        imageView.frame = CGRect(x: CGFloat(x), y: 100, width: 15, height: 15)
-        targetImages.append(imageView)
-        overviewView.addSubview(imageView)
-        */
         let targetImageView = UIImageView(image: UIImage(named: "location-target")!.withRenderingMode(UIImage.RenderingMode.alwaysTemplate))
         targetImageView.tintColor = user.getColorFromPercentage(percentage: target)
         targetImageView.frame = CGRect(x: 8, y: 7, width: 27, height: 27)
