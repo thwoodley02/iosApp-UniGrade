@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Overview {
+struct Overview {
     private(set) public var average: Double
     private(set) public var achieved: Double
     private(set) public var complete: Double

@@ -70,4 +70,12 @@ class Module {
         return "\(title)"    }
     func getCreditsStr() -> String {
         return "\(credits) Credits"    }
+    
+    func addNewAssessment(assessment: Assessment) {
+        if assessments != nil {
+            assessments!.append(assessment)
+        } else {
+            assessments = [assessment]
+        }
+    }
 }

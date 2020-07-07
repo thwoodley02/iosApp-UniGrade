@@ -132,5 +132,14 @@ class Year {
         }
         
     }
+    
+    func getThisModule(module: Module) -> Module? {
+        if let place = findModule(module: module) {
+            return modules![place]
+        }
+        else {
+            return nil
+        }
+    }
         
 }

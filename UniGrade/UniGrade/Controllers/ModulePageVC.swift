@@ -8,11 +8,11 @@
 
 import UIKit
 
-/*
 
-class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class ModulePageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var overviewView: OverviewView!
     @IBOutlet weak var titlePageLbl: UILabel!
     @IBOutlet weak var backButton: UIButton!
@@ -20,8 +20,13 @@ class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var module: Module!
     var year: Year!
     var updatePreviousView: ((_ data: Module) -> ())?
+    var updateBackwards: (() -> ())?
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         } else if section == 1 {
@@ -29,35 +34,35 @@ class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         } else if section == 2 {
             return 1
         } else if section == 3 {
-            return module.assessments?.count ?? 0
+            return module?.assessments?.count ?? 0
         } else {
             return 0
         }
     }
-    /*
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "targetTitleCell") as? TargetTitleCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TArgetTitleCell, for: indexPath) as? TargetTitleCell {
                 return cell
             } else {
                 return TargetTitleCell()
             }
         } else if indexPath.section == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "targetContentCell") as? TargetContentCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TArgetContentCell, for: indexPath) as? TargetContentCell {
                 cell.updateViews(thisOverview: module.moduleOverview, rowNum: indexPath.row)
                 return cell
             } else {
                 return TargetContentCell()
             }
         } else if indexPath.section == 2 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "moduleTitleCell") as? ModuleTitleCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MOduleTitleCell, for: indexPath) as? ModuleTitleCell {
                 return cell
             } else {
                 return ModuleTitleCell()
             }
         } else if indexPath.section == 3 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "AssessmentsCell") as? AssessmentsCell {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ASsessmentsCell, for: indexPath) as? AssessmentsCell {
                 cell.updateViews(assesment: module.assessments![indexPath.row])
                 return cell
             } else {
@@ -66,12 +71,41 @@ class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         } else {
             return AssessmentsCell()
         }
-        
     }
- */
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width = collectionView.bounds.size.width
+        
+        if indexPath.section == 0 {
+            return CGSize(width: width, height: 92)
+        } else if indexPath.section == 1 {
+            return CGSize(width: width, height: 44)
+        } else if indexPath.section == 2 {
+            return CGSize(width: width, height: 106)
+        } else if indexPath.section == 3 {
+            if traitCollection.horizontalSizeClass == .regular {
+                width = (collectionView.bounds.size.width / 2) - 10
+            } else {
+                width = collectionView.bounds.size.width
+            }
+            return CGSize(width: width, height: 140)
+        } else {
+            return CGSize(width: width, height: 140)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else if section == 1 {
+            return 0
+        } else if section == 2 {
+            return 0
+        } else if section == 3 {
+            return 10
+        } else {
+            return 0
+        }
     }
     
 
@@ -91,8 +125,8 @@ class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func loadData() {
-        tableView.delegate = self
-        //tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         overviewView.updateViews(overview: module)
         titlePageLbl.text = module.title
         backButton.tintColor = accentColour
@@ -107,7 +141,13 @@ class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 popup.setYear(year: year)
                 popup.onUpdateModule = updateModule(_:)
             }
-        } 
+        } else if segue.identifier == TOAddAssesSegue {
+            if let popup = segue.destination as? AddAssessmentVC {
+                popup.thisModule = module
+                popup.isNew = true
+                popup.onSubmit = newAssessment(_:)
+            }
+        }
     }
     
     func moduleDeleted(_ data: Module) -> () {
@@ -117,10 +157,25 @@ class ModulePageVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func updateModule(_ data: Module) -> () {
+        year = DataService.instance.getUser().getThisYear(year: year)
+        module = year.getThisModule(module: module)
         loadData()
-        tableView.reloadData()
+        collectionView.reloadData()
+        
+    }
+    
+    func newAssessment(_ data: Assessment) -> () {
+        module.addNewAssessment(assessment: data)
+        DataService.instance.getUser().updateUser()
+        
+        year = DataService.instance.getUser().getThisYear(year: year)
+        module = year.getThisModule(module: module)
+        loadData()
+        collectionView.reloadData()
+        
+        updateBackwards?()
     }
 
 }
 
- */
+ 

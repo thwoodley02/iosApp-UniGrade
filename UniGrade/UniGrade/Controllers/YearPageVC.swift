@@ -20,39 +20,8 @@ class YearPageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
     
     var updatePreviousView: (() -> ())?
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = collectionView.bounds.size.width
-        
-        if indexPath.section == 0 {
-            return CGSize(width: width, height: 92)
-        } else if indexPath.section == 1 {
-            return CGSize(width: width, height: 44)
-        } else if indexPath.section == 2 {
-            return CGSize(width: width, height: 106)
-        } else if indexPath.section == 3 {
-            if traitCollection.horizontalSizeClass == .regular {
-                width = (collectionView.bounds.size.width / 2) - 10
-            } else {
-                width = collectionView.bounds.size.width
-            }
-            return CGSize(width: width, height: 155)
-        } else {
-            return CGSize(width: width, height: 158)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        } else if section == 1 {
-            return 0
-        } else if section == 2 {
-            return 0
-        } else if section == 3 {
-            return 10
-        } else {
-            return 0
-        }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -101,10 +70,46 @@ class YearPageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width = collectionView.bounds.size.width
+        
+        if indexPath.section == 0 {
+            return CGSize(width: width, height: 92)
+        } else if indexPath.section == 1 {
+            return CGSize(width: width, height: 44)
+        } else if indexPath.section == 2 {
+            return CGSize(width: width, height: 106)
+        } else if indexPath.section == 3 {
+            if traitCollection.horizontalSizeClass == .regular {
+                width = (collectionView.bounds.size.width / 2) - 10
+            } else {
+                width = collectionView.bounds.size.width
+            }
+            return CGSize(width: width, height: 155)
+        } else {
+            return CGSize(width: width, height: 158)
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else if section == 1 {
+            return 0
+        } else if section == 2 {
+            return 0
+        } else if section == 3 {
+            return 10
+        } else {
+            return 0
+        }
+    }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 3 {
+            let thisModule = year.modules![indexPath.row] //, sender: thisModule
+            performSegue(withIdentifier: TOModulePageSegue, sender: thisModule)
+        }
     }
     
     
@@ -122,6 +127,13 @@ class YearPageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         overviewView.updateViews(overview: year)
         titlePageLbl.text = year.getTitleStr()
         backButton.tintColor = accentColour
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        collectionView.layoutMarginsDidChange()
+        collectionView.reloadData()
+        overviewView.redrawTargets()
+        loadData()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
@@ -144,16 +156,16 @@ class YearPageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
                 popup.setYear(year: self.year)
                 popup.onSubmit = newModule(_:)
             }
-        } /* else if segue.identifier == TOModulePageSegue {
+        }  else if segue.identifier == TOModulePageSegue {
             if let popup = segue.destination as? ModulePageVC {
                 assert(sender as? Module != nil)
                 popup.setModule(module: sender as! Module)
                 popup.updatePreviousView = moduleDeleted(_:)
                 popup.year = year
-                
+                popup.updateBackwards = updateThisView
             }
         }
- */
+ 
     }
     
     func yearDeleted() -> () {
@@ -174,21 +186,6 @@ class YearPageVC: UIViewController, UICollectionViewDelegate, UICollectionViewDa
         year.addModule(module: data)
         loadData()
         collectionView.reloadData()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 3 {
-            let thisModule = year.modules![indexPath.row] //, sender: thisModule
-            performSegue(withIdentifier: TOModulePageSegue, sender: thisModule)
-        }
-        
-    }
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        collectionView.layoutMarginsDidChange()
-        collectionView.reloadData()
-        overviewView.redrawTargets()
-        loadData()
     }
     
     

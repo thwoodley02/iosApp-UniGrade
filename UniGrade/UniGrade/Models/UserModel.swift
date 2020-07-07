@@ -106,4 +106,13 @@ class User {
         }
     }
     
+    func getThisYear(year: Year) -> Year? {
+        if let place = findYear(year: year) {
+            return years![place]
+        }
+        else {
+            return nil
+        }
+    }
+    
 }

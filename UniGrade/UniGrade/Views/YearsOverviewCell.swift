@@ -18,8 +18,7 @@ class YearsOverviewCell: UICollectionViewCell {
     }
     
     
-    public func updateViews(year: Year, cellWidth: CGFloat) {
-        overview.cellWidth = cellWidth
+    public func updateViews(year: Year) {
         overview.updateViews(overview: year)
     }
     

@@ -30,8 +30,8 @@
             filePath = "UniGrade/Controllers/OverviewPageVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "UniGrade/Controllers/OverviewPageVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -295,22 +295,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "69027E6B-5F01-49B1-B126-421E30FEE8BE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UniGrade/Controllers/YearPageVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "74256C4E-5DAE-4FBA-9652-F3D0C4D9F0CF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -318,8 +302,8 @@
             filePath = "UniGrade/Controllers/YearPageVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +318,8 @@
             filePath = "UniGrade/Controllers/YearPageVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +334,8 @@
             filePath = "UniGrade/Controllers/YearPageVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "moduleDeleted(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -414,8 +398,8 @@
             filePath = "UniGrade/Controllers/OverviewPageVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -439,16 +423,280 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "996F3414-345B-40BC-BE94-F800E60ADDB5"
+            uuid = "8D9AAA33-4F77-4CCC-A487-B79401AB315B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UniGrade/Controllers/OverviewPageVC.swift"
+            filePath = "UniGrade/Controllers/AddModuleVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "submitButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UniGrade/Controllers/AddModuleVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "AddModuleVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26 - 9a49362337a8731d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.AddModuleVC.onUpdate.getter : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/AddModuleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26 - 66b2327635fa729"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.AddModuleVC.onUpdate.setter : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/AddModuleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "166">
+               </Location>
+               <Location
+                  uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26 - cf92fbf731b9361e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.AddModuleVC.onUpdate.modify : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/AddModuleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26 - d26bca9cda366003"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.AddModuleVC.onUpdate.modify : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/AddModuleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26 - 369bedbcd242d125"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.AddModuleVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UniGrade.AddModuleVC"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/AddModuleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1811">
+               </Location>
+               <Location
+                  uuid = "B2CF9874-9444-4DB3-BE28-E91E11148B26 - c003067a249b76de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.AddModuleVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UniGrade.AddModuleVC&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/AddModuleVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1752">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UniGrade/Controllers/PencilEditVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "PencilEditVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A - d736fca73afd98cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.PencilEditVC.onUpdateModule.getter : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/PencilEditVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A - 5424358e42af4539"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.PencilEditVC.onUpdateModule.setter : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/PencilEditVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "166">
+               </Location>
+               <Location
+                  uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A - b8d1694f85ee17c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.PencilEditVC.onUpdateModule.modify : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/PencilEditVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A - c40715b0dba4e6ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.PencilEditVC.onUpdateModule.modify : Swift.Optional&lt;(UniGrade.Module) -&gt; ()&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/PencilEditVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A - cb3d7bf95171468f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.PencilEditVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UniGrade.PencilEditVC"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/PencilEditVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1211">
+               </Location>
+               <Location
+                  uuid = "29A82CCB-B3B7-491E-9E8F-40F45904722A - fc62b2ada3ba3f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UniGrade.PencilEditVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UniGrade.PencilEditVC&gt;"
+                  moduleName = "UniGrade"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomwoodley/Documents/App%20Development/iOS%20Apps/UniGrade%20App/iosApp-UniGrade/UniGrade/UniGrade/Controllers/PencilEditVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27C5EBCF-C5C5-432D-9343-573C90B7358D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UniGrade/Controllers/ModulePageVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "updateModule(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8599B09E-25D4-448E-A2DC-8FAC8AFABB15"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UniGrade/Controllers/ModulePageVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "updateModule(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "898F0DD5-A6F9-4311-B554-0FEF1A4A454B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UniGrade/Controllers/ModulePageVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "updateModule(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

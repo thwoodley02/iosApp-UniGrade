@@ -20,6 +20,7 @@ let TOAddModuleSegue = "addModuleSegue"
 let TOModulePageSegue = "modulePageSegue"
 let TOPencilModuleSegue = "pencilModuleSegue"
 let TOEditModuleSegue = "editModuleSegue"
+let TOAddAssesSegue = "addAssesSegue"
 
 let accentColour: UIColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
 
@@ -30,3 +31,5 @@ let TArgetTitleCell = "targetTitleCell"
 let TArgetContentCell = "targetContentCell"
 let MOduleTitleCell = "moduleTitleCell"
 let MOduleContentCell = "moduleContentCell"
+
+let ASsessmentsCell = "assessmentsContentCell"

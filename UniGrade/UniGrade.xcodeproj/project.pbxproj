@@ -37,6 +37,7 @@
 		8A6B15AB24ACFB0800C866F6 /* Module.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B15AA24ACFB0800C866F6 /* Module.storyboard */; };
 		8A6B15AD24ACFB5F00C866F6 /* ModulePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */; };
 		8A6B15AF24ACFCD000C866F6 /* AssessmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B15AE24ACFCD000C866F6 /* AssessmentsCell.swift */; };
+		8A8C393A24B4B47F0080D80D /* AddAssessmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8C393924B4B47F0080D80D /* AddAssessmentVC.swift */; };
 		8ACEE70324AF6B6300F32D5A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACEE70224AF6B6300F32D5A /* Constants.swift */; };
 		8ACEE70524AF72CE00F32D5A /* TargetCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACEE70424AF72CE00F32D5A /* TargetCells.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		8A6B15AA24ACFB0800C866F6 /* Module.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Module.storyboard; sourceTree = "<group>"; };
 		8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulePageVC.swift; sourceTree = "<group>"; };
 		8A6B15AE24ACFCD000C866F6 /* AssessmentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentsCell.swift; sourceTree = "<group>"; };
+		8A8C393924B4B47F0080D80D /* AddAssessmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssessmentVC.swift; sourceTree = "<group>"; };
 		8ACEE70224AF6B6300F32D5A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8ACEE70424AF72CE00F32D5A /* TargetCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,13 +176,14 @@
 			isa = PBXGroup;
 			children = (
 				8A2E1E5E24A63FD600AE76E6 /* OverviewPageVC.swift */,
+				8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */,
+				8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */,
 				8A2E1E9524A77B4300AE76E6 /* PickTargetsVC.swift */,
 				8A2E1E9724A7ADF700AE76E6 /* AddTargetVC.swift */,
-				8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */,
-				8A2E1E9D24A93ED000AE76E6 /* YearPageVC.swift */,
 				8A6B15A424ABB5B600C866F6 /* PencilEditVC.swift */,
+				8A2E1E9924A7F8E200AE76E6 /* AddYearVC.swift */,
 				8A6B15A824ACEC3700C866F6 /* AddModuleVC.swift */,
-				8A6B15AC24ACFB5F00C866F6 /* ModulePageVC.swift */,
+				8A8C393924B4B47F0080D80D /* AddAssessmentVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				8A2E1E8C24A664FE00AE76E6 /* YearsOverviewCell.swift in Sources */,
 				8A2E1E9E24A93ED000AE76E6 /* YearPageVC.swift in Sources */,
 				8A2E1E5D24A63FD600AE76E6 /* SceneDelegate.swift in Sources */,
+				8A8C393A24B4B47F0080D80D /* AddAssessmentVC.swift in Sources */,
 				8A2E1E9224A7486B00AE76E6 /* UserModel.swift in Sources */,
 				8A2E1E7324A64C2400AE76E6 /* OverviewView.swift in Sources */,
 			);

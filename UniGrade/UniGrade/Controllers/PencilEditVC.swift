@@ -104,9 +104,15 @@ class PencilEditVC: UIViewController {
                 popup.isNew = false
                 popup.thisModule = module!
                 popup.setYear(year: year!)
+                popup.onUpdate = removePencilAfterUpdate(_:)
             }
         }
     }
     
+    func removePencilAfterUpdate(_ data: Module) -> () {
+        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+        onUpdateModule?(data)
+    }
     
 }
